@@ -1,0 +1,200 @@
+
+{
+  "contact": {
+    "name": "Steven Xu",
+    "email": "stevenxu@live.ca",
+    "phone": "+14165628388",
+    "address": "Richmond Hill, Ontario, Canada",
+    "github": "latagore",
+    "website": "stevenxu.xyz",
+    "linkedin": "stevenxu2"
+  },
+  "education": [
+    {
+      "organization": "York University",
+      "title": "BSc Honours, Computer Science",
+      "startDate": "September 2010",
+      "endDate": "June 2016",
+      "location": "Toronto, Ontario",
+      "gpa": {
+        "overall": 6.54,
+        "major": 6.48,
+        "max": 9
+      }
+    }, {
+      "organization": "Lighthouse Labs",
+      "title": "Web Development Bootcamp (Immersive)",
+      "startDate": "May 2017",
+      "endDate": "June 2017",
+      "location": "Toronto, Ontario"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "E-Commerce Project",
+      "info": [
+        "Built an online store from scratch in five days with three people. Led overall design of user flows and data. Created wireframes and Javascript functionality."
+      ]
+    }, {
+      "title": "3D Game Experiment",
+      "info": [
+        "Studied effectiveness of two types of mini-maps. Learned Unity and C<sup>♯</sup> to create game from scratch, even though coding not required."
+      ]
+    }, {
+      "title": "Personal Website",
+      "info": [
+        "Built website by learning Foundation, Sass, Gulp, and Node for the first time. Website presents accomplishments using custom jQuery gallery and CSS3 animations."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front-end Web Development",
+      "strength": 0.6,
+      "subskills": [
+        "HTML5", "Sass", "jQuery", "Bootstrap", "Foundation"
+      ]
+    },
+    {
+      "name": "Back-end Web Development",
+      "strength": 0.6,
+      "subskills": [
+        "Node", "Java", "PostgreSQL"
+      ]
+    },
+    {
+      "name": "git",
+      "strength": 0.6
+    },
+    {
+      "name": "Unix",
+      "strength": 0.5
+    },
+    {
+      "name": "Software Testing",
+      "strength": 0.4
+    },
+    {
+      "name": "Virtual machines",
+      "strength": 0.4
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Developer",
+      "organization": "York University",
+      "location": "Toronto, Ontario",
+      "startDate": "May 2015",
+      "enddate": "April 2016",
+      "info": [
+        "Independently ported customizations to Netdisco's new version and added new features by designing schema updates for the PostgreSQL database, visual updates to the Bootstrap web interface, and adding backend Perl server-side code.",
+        "Gathered feature requirements and ensured satisfaction by proactively meeting with users. Two out of six survey respondents indicated the software met their needs extremely well and four indicated very well."
+      ]
+    }, {
+      "title": "WebSphere Commerce Functional Verification Tester",
+      "organization": "IBM",
+      "location": "Markham, Ontario",
+      "startDate": "May 2013",
+      "endDate": "August 2014",
+      "info": [
+        "Collaborated with developers and testers to test REST services. Helped in the design of test framework with JUnit 4 and guice expertise.",
+        "Created test plan for command line utility using formal     software testing techniques.",
+        "Performed accessibility testing and discovered fifty accessibility-related defects, including some that were not found during testing of the previous release. Presented tutorial on screen-reader technology to fifty team members, due to recognized expertise."
+      ]
+    }
+  ]
+
+}
+
+          <div  class="title">BSc&nbsp;Honours, Computer&nbsp;Science</div>
+          <div  class="place">York&nbsp;University</div>
+          <div  class="period">Toronto,&nbsp;Ontario &ndash;&nbsp;September 2010 to June 2016</div>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-caret-right"></i>Overall GPA: 6.54 of 9, Major GPA: 6.48</li>
+            <li><i class="fa-li fa fa-caret-right"></i>Computer Science Skills:
+							User Interface Design, Web Development, Algorithms, Concurrency</li>
+          </ul>
+        </div>
+      </section>
+      <section  class="trait">
+        <h2>Achievements</h2>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i>Led Java-related expertise at IBM and York, educating
+            colleagues on frameworks such as Swing, guice and JUnit 4. </li>
+					<li  class="project">
+            <i class="fa-li fa fa-caret-right"></i>
+						<h3>E-Commerce Project</h3>
+            <span>Built an online store from scratch in five days with three people. Led overall design of
+              user flows and data. Created wireframes and Javascript functionality.</span> </li>
+          <li  class="project">
+            <i class="fa-li fa fa-caret-right"></i>
+            <h3>3D Game Experiment</h3>
+						<span>Studied effectiveness of two types of mini-maps. Learned Unity and C<sup>♯</sup>
+						  to create game from scratch, even though coding not required.</span>
+          </li>
+					<li  class="project">
+            <i class="fa-li fa fa-caret-right"></i>
+            <h3>Personal Website</h3>
+            <span>Built website by learning Foundation, Sass, Gulp, and Node for the first time. Website presents
+						  accomplishments using custom jQuery gallery and CSS3 animations.</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Technical Skills</h2>
+        <div  class="skillgraph clearfix">
+          <div  class="bar bar6 bar-main">
+            <div>Front-end Web Development<br><small>HTML5, Sass, jQuery, Bootstrap/Foundation</small></div>
+          </div>
+          <div  class="bar bar6 bar-main">
+            <div>Back-end Web Development<br><small>Node, Java, Perl</small></div>
+          </div>
+          <div  class="bar bar6 bar-main">
+            <div>Git</div>
+          </div>
+					<div  class="bar bar5 bar-main">
+						<div>Unix</div>
+					</div>
+          <div  class="bar bar4">
+            <div>Software Testing<br></div>
+          </div>
+					<div  class="bar bar3 bar-main">
+            <div>Bash, C, VMWare</div>
+          </div>
+          <div  class="axislegend">
+            <div  class="axislabel axis3">Basic</div>
+            <div  class="axislabel axis6">Professional</div>
+            <div  class="axislabel axis8">Expert</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Experience</h2>
+        <div  class="job">
+          <div  class="title">Software Developer</div>
+          <div  class="place">York University</div>
+          <div  class="period">May 2015 – April 2016</div>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-caret-right"></i>Independently ported customizations to Netdisco's new version and
+              added new features by designing schema updates for the PostgreSQL database, visual updates to the Bootstrap web interface, and adding backend Perl server-side code.</li>
+            <li><i class="fa-li fa fa-caret-right"></i>Gathered feature requirements and ensured satisfaction by
+              proactively meeting with users. Two out of six survey respondents indicated the software met their needs extremely well
+              and four indicated very well.</li>
+          </ul>
+        </div>
+        <div  class="job">
+          <div  class="title">WebSphere Commerce Functional Verification Tester</div>
+          <div  class="place">IBM</div>
+          <div  class="period">Markham,&nbsp;Ontario &ndash;&nbsp;May&nbsp;2013 to August&nbsp;2014</div>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-caret-right"></i>Collaborated with developers and testers to test REST services.
+              Helped in the design of test framework with JUnit 4 and guice expertise. </li>
+						<li><i class="fa-li fa fa-caret-right"></i>Created test plan for command line utility using formal
+							software testing techniques.</li>
+            <li><i class="fa-li fa fa-caret-right"></i>Performed accessibility testing and discovered
+						  fifty accessibility-related defects, including some that were not found during testing of the
+							previous release. Presented tutorial on screen-reader technology to
+						fifty team members, due to recognized expertise. </li>
+          </ul>
+        </div>
+      </section>
