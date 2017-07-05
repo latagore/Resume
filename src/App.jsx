@@ -78,24 +78,27 @@ const SkillGraph = ({skills}) => {
   return (
     <figure>
       <div className="skill-graph" role="presentation">
-        <div className="labels">
-        {
-          labels.map(
-            (label, i) => label && <span key={i} className="label-{i}" role="presentation">{label}</span>
-          )
-        }
-        </div>
         <div className="bars">
+
           {
             skills.map(
               (skill, key) => (
-                <div key={key} className={`bar-${skill.strength * 10}`}>
-                  <div>{skill.name}</div>
-                  {skill.subskills && <div className="subskills">{skill.subskills.join(", ")}</div>}
+                <div key={key} className={`bar bar-${skill.strength * 10}`}>
+                  <div className="bar-content">
+                    <div>{skill.name}</div>
+                    {skill.subskills && <div className="subskills">{skill.subskills.join(", ")}</div>}
+                  </div>
                 </div>
               )
             )
           }
+        </div>
+        <div className="labels">
+        {
+          labels.map(
+            (label, i) => label && <span key={i} className={`label-${i + 1}`} role="presentation">{label}</span>
+          )
+        }
         </div>
       </div>
     </figure>

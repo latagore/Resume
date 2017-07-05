@@ -41,3 +41,59 @@ ul {
   float: right;
   width: 25%;
 }
+
+$bar-width: 0.5;
+$bar-color: rgba(63, 127, 191, 0.8);
+.skill-graph {
+  position: relative;
+  .labels {
+    position: relative;
+    z-index: 1;
+    @for $i from 1 to 10 {
+      .label-#{$i} {
+        left: $bar-width * percentage(($i) / 10);
+        position: absolute;
+      }
+    }
+  }
+  .bars {
+    /* create 10 grid lines and hide the rest*/
+    $epsilon: 0.01;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      /* add epsilon to include the last line */
+      transparent percentage($bar-width + $epsilon),
+      white percentage($bar-width + $epsilon),
+      white
+    ), repeating-linear-gradient(
+      to right,
+      #CCC,
+      #CCC 1px,
+      #FFF 1px,
+      #FFF #{$bar-width * 10%},
+      #CCC 1px
+    );
+
+    @for $i from 1 through 10 {
+      $width: percentage($i * $bar-width / 10);
+      & .bar-#{$i}  {
+        background: linear-gradient(to right, $bar-color, $bar-color $width,  transparent $width,  transparent);
+        > .bar-content {
+          left: $width;
+          position: relative;
+          margin: 0.3rem;
+
+          > * {
+            display: inline;
+            &::after {
+              /* line break after first part;*/
+              content:"\a";
+              white-space: pre;
+            }
+          }
+        }
+      }
+    }
+  }
+}
