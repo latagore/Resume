@@ -11,7 +11,7 @@ const Header = ({data}) => {
 const Aside = ({data}) => {
   const c = data.contact;
   return (
-    <aside className="sidebar">
+    <aside className="aside">
       <div className="email">{c.email}</div>
       <div className="phone"><a href={`tel:${c.phone}`}>{c.phone}</a></div>
       <div className="address">{c.address}</div>
@@ -24,7 +24,7 @@ const Aside = ({data}) => {
 
 const Experience = ({data}) => {
   return (
-    <div>
+    <div className="info-block">
       <h3 className="heading">{data.title} - {data.organization}</h3>
       <div className="location">{data.location}</div>
       <div className="date">{data.startDate} to {data.endDate}</div>
@@ -41,7 +41,7 @@ const Experience = ({data}) => {
 
 const Education = ({data}) => {
   return (
-    <div>
+    <div className="info-block">
       <h3 className="heading">{data.title} - {data.organization}</h3>
       <div className="location">{data.location}</div>
       <div className="date">{data.startDate} to {data.endDate}</div>
@@ -89,7 +89,7 @@ const SkillGraph = ({skills}) => {
           {
             skills.map(
               (skill, key) => (
-                <div key={key} className="bar-{skill.strength * 10}">
+                <div key={key} className={`bar-${skill.strength * 10}`}>
                   <div>{skill.name}</div>
                   {skill.subskills && <div className="subskills">{skill.subskills.join(", ")}</div>}
                 </div>
