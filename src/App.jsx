@@ -63,7 +63,7 @@ const Achievement = ({data}) => {
   return (
     <li>
       <h3>{data.title}</h3>
-      {data.info.map((info, key) => <p key={key}>{info}</p>)}
+      {data.info.map((info, key) => <p key={key} dangerouslySetInnerHTML={{__html: info}}></p>)}
     </li>
   )
 }
@@ -76,32 +76,29 @@ const SkillGraph = ({skills}) => {
   labels[8 - 1] = "Expert";
 
   return (
-    <figure>
-      <div className="skill-graph" role="presentation">
-        <div className="bars">
-
-          {
-            skills.map(
-              (skill, key) => (
-                <div key={key} className={`bar bar-${skill.strength * 10}`}>
-                  <div className="bar-content">
-                    <div>{skill.name}</div>
-                    {skill.subskills && <div className="subskills">{skill.subskills.join(", ")}</div>}
-                  </div>
-                </div>
-              )
-            )
-          }
-        </div>
-        <div className="labels">
+    <div className="skill-graph" role="presentation">
+      <div className="bars">
         {
-          labels.map(
-            (label, i) => label && <span key={i} className={`label-${i + 1}`} role="presentation">{label}</span>
+          skills.map(
+            (skill, key) => (
+              <div key={key} className={`bar bar-${skill.strength * 10}`}>
+                <div className="bar-content">
+                  <div>{skill.name}</div>
+                  {skill.subskills && <div className="subskills">{skill.subskills.join(", ")}</div>}
+                </div>
+              </div>
+            )
           )
         }
-        </div>
       </div>
-    </figure>
+      <div className="labels">
+      {
+        labels.map(
+          (label, i) => label && <span key={i} className={`label-${i + 1}`} role="presentation">{label}</span>
+        )
+      }
+      </div>
+    </div>
   )
 }
 
@@ -109,25 +106,29 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="resume">
         <Header data={this.props.data} />
         <Aside data={this.props.data} />
-        <section className="education">
-          <h2>Education</h2>
-          {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
-        </section>
-        <section className="achievements">
-          <h2>Achievements</h2>
-          {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} />)}
-        </section>
-        <section className="skills">
-          <h2>Skills</h2>
-          <SkillGraph skills={this.props.data.skills} />
-        </section>
-        <section className="experience">
-          <h2>Experience</h2>
-          {this.props.data.experience.map((data, key) => <Experience data={data} key={key} />)}
-        </section>
+        <main>
+          <section className="education">
+            <h2>Education</h2>
+            {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
+          </section>
+          <section className="achievements">
+            <h2>Achievements</h2>
+            <ul>
+              {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} />)}
+            </ul>
+          </section>
+          <section className="skills">
+            <h2>Skills</h2>
+            <SkillGraph skills={this.props.data.skills} />
+          </section>
+          <section className="experience">
+            <h2>Experience</h2>
+            {this.props.data.experience.map((data, key) => <Experience data={data} key={key} />)}
+          </section>
+        </main>
       </div>
     );
   }

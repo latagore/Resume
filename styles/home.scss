@@ -1,5 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Assistant:300,600|Merriweather+Sans:400");
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
+body {
+  font-family: Assistant, Sans-Serif;
+}
+
+h1 {
+  font-family: "Merriweather Sans", Sans-Serif;
+  text-align: center;
+}
+
 h2 {
-  font-size: 130%;
+  font-size: 140%;
   font-weight: bold;
   margin-top: 0.5em;
   margin-bottom: 0.3em;
@@ -11,11 +31,22 @@ h3 {
   margin: 0;
 }
 
+main {
+  column-count: 2;
+}
+
+section {
+  break-inside: avoid-column;
+}
+
 ul {
   margin: 0.5em;
   padding-left: 1em;
 }
-
+.resume {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 .info-block {
   margin-bottom: 1em;
 }
@@ -38,20 +69,37 @@ ul {
 }
 
 .aside {
-  float: right;
-  width: 25%;
+  @media (min-width: 801px) {
+    float: right;
+    width: 25%;
+  }
+  @media (max-width: 800px), print {
+    > * {
+      display: inline-block;
+      padding: 0 0.5em;
+    }
+
+    & {
+      margin-bottom: 2em;
+    }
+  }
 }
 
-$bar-width: 0.5;
+$bar-width: 1;
 $bar-color: rgba(63, 127, 191, 0.8);
 .skill-graph {
   position: relative;
   .labels {
     position: relative;
     z-index: 1;
+    height: 2em; /* prevent labels from wrapping to next column */
+    font-size: 70%;
     @for $i from 1 to 10 {
       .label-#{$i} {
         left: $bar-width * percentage(($i) / 10);
+        border-left: 1px solid #CCC;
+        padding-left: 0.25em;
+        line-height: 1;
         position: absolute;
       }
     }
@@ -74,6 +122,11 @@ $bar-color: rgba(63, 127, 191, 0.8);
       #FFF #{$bar-width * 10%},
       #CCC 1px
     );
+
+    font-size: 90%;
+    .subskills {
+      font-size: 90%;
+    }
 
     @for $i from 1 through 10 {
       $width: percentage($i * $bar-width / 10);
