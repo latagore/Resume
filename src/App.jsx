@@ -1,5 +1,27 @@
 import React, {Component} from 'react';
 
+const Header = ({data}) => {
+  return (
+    <header>
+      <h1>{data.contact.name}</h1>
+    </header>
+  )
+}
+
+const Sidebar = ({data}) => {
+  const c = data.contact;
+  return (
+    <aside className="sidebar">
+      <div className="email">{c.email}</div>
+      <div className="phone"><a href={`tel:${c.phone}`}>{c.phone}</a></div>
+      <div className="address">{c.address}</div>
+      <div className="github"><a href={`https://github.com/${c.github}`}>{c.github}</a></div>
+      <div className="website"><a href={`https://${c.website}`}>{c.website}</a></div>
+      <div className="linkedin">{c.linkedin}</div>
+    </aside>
+  )
+}
+
 const Experience = ({data}) => {
   return (
     <div>
@@ -85,6 +107,8 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Header data={this.props.data} />
+        <Sidebar data={this.props.data} />
         <section className="education">
           <h2>Education</h2>
           {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
