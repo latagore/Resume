@@ -8,7 +8,7 @@ const Header = ({data}) => {
   )
 }
 
-const Sidebar = ({data}) => {
+const Aside = ({data}) => {
   const c = data.contact;
   return (
     <aside className="sidebar">
@@ -108,7 +108,7 @@ class App extends Component {
     return (
       <div>
         <Header data={this.props.data} />
-        <Sidebar data={this.props.data} />
+        <Aside data={this.props.data} />
         <section className="education">
           <h2>Education</h2>
           {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
