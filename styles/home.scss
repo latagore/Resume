@@ -69,10 +69,10 @@ ul {
     h3 {
       display: inline;
       &::after {
-        content: "-";
+        content: "\2014";
         display: inline-block;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
       }
     }
     p {

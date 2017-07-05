@@ -25,7 +25,7 @@ const Aside = ({data}) => {
 const Experience = ({data}) => {
   return (
     <div className="info-block">
-      <h3 className="heading">{data.title} - {data.organization}</h3>
+      <h3 className="heading">{data.title} &mdash; {data.organization}</h3>
       <div className="location">{data.location}</div>
       <div className="date">{data.startDate} to {data.endDate}</div>
       {data.info &&
@@ -42,7 +42,7 @@ const Experience = ({data}) => {
 const Education = ({data}) => {
   return (
     <div className="info-block">
-      <h3 className="heading">{data.title} - {data.organization}</h3>
+      <h3 className="heading">{data.title} &mdash; {data.organization}</h3>
       <div className="location">{data.location}</div>
       <div className="date">{data.startDate} to {data.endDate}</div>
       {(data.info || data.gpa) &&
