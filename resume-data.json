@@ -20,7 +20,9 @@
         "overall": 6.54,
         "major": 6.48,
         "max": 9
-      }
+      }, "info": [
+        "Courses: User Interface Design, Web Development, Algorithms, Concurrency"
+      ]
     }, {
       "organization": "Lighthouse Labs",
       "title": "Web Development Bootcamp (Immersive)",
