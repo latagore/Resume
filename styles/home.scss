@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Assistant:300,600|Merriweather+Sans:400");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
 sup, sub {
   vertical-align: baseline;
@@ -72,7 +73,7 @@ ul {
   @media (min-width: 801px) {
     float: right;
     width: 25%;
-    
+    padding-left: 1em;
   }
   @media (max-width: 800px), print {
     > * {
@@ -83,6 +84,44 @@ ul {
     & {
       margin-bottom: 2em;
     }
+  }
+
+  .email::before {
+    content: '\f0e0';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .phone::before {
+    content: '\f095';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .address::before{
+    content: '\f015';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .github::before{
+    content: '\f09b';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .website::before{
+    content: '\f0ac';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .linkedin::before{
+    content: '\f0e1';
+    font-family: FontAwesome;
+    display: inline-block;
+    text-align: center;
+    padding-right: 0.3em;
   }
 }
 
