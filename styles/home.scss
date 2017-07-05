@@ -33,7 +33,9 @@ h3 {
 }
 
 main {
-  column-count: 2;
+  @media (min-width: 600px) {
+    column-count: 2;
+  }
 }
 
 section {
