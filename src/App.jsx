@@ -38,6 +38,15 @@ const Education = (data, key) => {
   );
 }
 
+const Achievement = (achievement, i) => {
+  return (
+    <li key={i}>
+      <h3>{achievement.title}</h3>
+      {achievement.info.map((data, key) => <p key={key}>{data}</p>)}
+    </li>
+  )
+}
+
 const SkillGraph = (skills) => {
   // create an array of empty elements
   const labels = new Array(10).fill(undefined);
@@ -80,6 +89,10 @@ class App extends Component {
         <section className="education">
           <h2>Education</h2>
           {this.props.data.education.map((e, i) => Education(e, i))}
+        </section>
+        <section className="achievements">
+          <h2>Achievements</h2>
+          {this.props.data.achievements.map((e, i) => Achievement(e, i))}
         </section>
         <section className="skills">
           <h2>Skills</h2>
