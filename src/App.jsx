@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-const Experience = (data, key) => {
+const Experience = ({data}) => {
   return (
-    <div key={key}>
+    <div>
       <h3 className="heading">{data.title} - {data.organization}</h3>
       <div className="location">{data.location}</div>
       <div className="date">{data.startDate} to {data.endDate}</div>
@@ -17,10 +17,9 @@ const Experience = (data, key) => {
   );
 }
 
-const Education = (data, key) => {
-  console.log(data.gpa);
+const Education = ({data}) => {
   return (
-    <div key={key}>
+    <div>
       <h3 className="heading">{data.title} - {data.organization}</h3>
       <div className="location">{data.location}</div>
       <div className="date">{data.startDate} to {data.endDate}</div>
@@ -38,16 +37,16 @@ const Education = (data, key) => {
   );
 }
 
-const Achievement = (achievement, i) => {
+const Achievement = ({data}) => {
   return (
-    <li key={i}>
-      <h3>{achievement.title}</h3>
-      {achievement.info.map((data, key) => <p key={key}>{data}</p>)}
+    <li>
+      <h3>{data.title}</h3>
+      {data.info.map((info, key) => <p key={key}>{info}</p>)}
     </li>
   )
 }
 
-const SkillGraph = (skills) => {
+const SkillGraph = ({skills}) => {
   // create an array of empty elements
   const labels = new Array(10).fill(undefined);
   labels[3 - 1] = "Basic";
@@ -88,19 +87,19 @@ class App extends Component {
       <div>
         <section className="education">
           <h2>Education</h2>
-          {this.props.data.education.map((e, i) => Education(e, i))}
+          {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
         </section>
         <section className="achievements">
           <h2>Achievements</h2>
-          {this.props.data.achievements.map((e, i) => Achievement(e, i))}
+          {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} />)}
         </section>
         <section className="skills">
           <h2>Skills</h2>
-          {SkillGraph(this.props.data.skills)}
+          <SkillGraph skills={this.props.data.skills} />
         </section>
         <section className="experience">
           <h2>Experience</h2>
-          {this.props.data.experience.map((e, i) => Experience(e, i))}
+          {this.props.data.experience.map((data, key) => <Experience data={data} key={key} />)}
         </section>
       </div>
     );
