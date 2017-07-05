@@ -51,14 +51,14 @@
   ],
   "skills": [
     {
-      "name": "Front-end Web Development",
+      "name": "Web Frontend",
       "strength": 0.6,
       "subskills": [
         "React", "Sass", "jQuery","Foundation"
       ]
     },
     {
-      "name": "Back-end Web Development",
+      "name": "Web Backend",
       "strength": 0.6,
       "subskills": [
         "Node", "Java", "PostgreSQL"
@@ -77,7 +77,7 @@
       "strength": 0.4
     },
     {
-      "name": "Virtual machines",
+      "name": "Virtual Machines",
       "strength": 0.4
     }
   ],
