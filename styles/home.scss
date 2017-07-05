@@ -15,8 +15,11 @@ body {
 }
 
 h1 {
-  @media (min-width: 801px), print {
+  @media (min-width: 801px) {
     width: 75%;
+  }
+  @media print {
+    margin-top: 0;
   }
   margin-bottom: 0.25em;
   font-family: "Merriweather Sans", Sans-Serif;
@@ -39,7 +42,7 @@ h3 {
 }
 
 main {
-  @media (min-width: 600px) {
+  @media (min-width: 600px), print {
     column-count: 2;
   }
 }
@@ -149,6 +152,7 @@ $bar-color: rgba(63, 127, 191, 0.8);
       .label-#{$i} {
         left: $bar-width * percentage(($i) / 10);
         border-left: 1px solid #CCC;
+        padding-top: 1em;
         padding-left: 0.25em;
         line-height: 1;
         position: absolute;
@@ -170,8 +174,7 @@ $bar-color: rgba(63, 127, 191, 0.8);
       #CCC,
       #CCC 1px,
       #FFF 1px,
-      #FFF #{$bar-width * 10%},
-      #CCC 1px
+      #FFF #{$bar-width * 10%}
     );
 
     font-size: 90%;
