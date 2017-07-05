@@ -52,7 +52,7 @@
       "name": "Front-end Web Development",
       "strength": 0.6,
       "subskills": [
-        "HTML5", "Sass", "jQuery", "Bootstrap", "Foundation"
+        "React", "Sass", "jQuery","Foundation"
       ]
     },
     {

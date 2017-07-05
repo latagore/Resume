@@ -72,7 +72,7 @@ const SkillGraph = ({skills}) => {
   // create an array of empty elements
   const labels = new Array(10).fill(undefined);
   labels[3 - 1] = "Basic";
-  labels[6 - 1] = "Professional";
+  labels[6 - 1] = "Pro";
   labels[8 - 1] = "Expert";
 
   return (
