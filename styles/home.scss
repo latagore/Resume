@@ -176,26 +176,25 @@ $bar-color: rgba(63, 127, 191, 0.8);
 
     font-size: 90%;
     .subskills {
-      font-size: 90%;
+      font-size: 80%;
+    }
+
+    .bar {
+      margin: 0.3em 0;
     }
 
     @for $i from 1 through 10 {
-      $width: percentage($i * $bar-width / 10);
-      & .bar-#{$i}  {
-        background: linear-gradient(to right, $bar-color, $bar-color $width,  transparent $width,  transparent);
-        > .bar-content {
-          left: $width;
-          position: relative;
-          margin: 0.3rem;
+      $offset: percentage($i * $bar-width / 10);
+      $width: percentage(1 - ($i * $bar-width / 10));
 
-          > * {
-            display: inline;
-            &::after {
-              /* line break after first part;*/
-              content:"\a";
-              white-space: pre;
-            }
-          }
+      & .bar-#{$i}  {
+
+        background: linear-gradient(to right, $bar-color, $bar-color $offset,  transparent $offset,  transparent);
+        > .bar-content {
+          left: $offset;
+          position: relative;
+          padding: 0.3rem;
+          width: $width;
         }
       }
     }

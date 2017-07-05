@@ -83,8 +83,9 @@ const SkillGraph = ({skills}) => {
             (skill, key) => (
               <div key={key} className={`bar bar-${skill.strength * 10}`}>
                 <div className="bar-content">
-                  <div>{skill.name}</div>
-                  {skill.subskills && <div className="subskills">{skill.subskills.join(", ")}</div>}
+                  <span>{skill.name}</span>
+                  {skill.subskills && <br />}
+                  {skill.subskills && <span className="subskills">{skill.subskills.join(", ")}</span>}
                 </div>
               </div>
             )
