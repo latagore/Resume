@@ -4,6 +4,7 @@ const Header = ({data}) => {
   return (
     <header>
       <h1>{data.contact.name}</h1>
+      <h2 className="job-title">{data.contact.title}</h2>
     </header>
   )
 }
@@ -12,6 +13,8 @@ const Aside = ({data}) => {
   const c = data.contact;
   return (
     <aside className="aside">
+      <p className="summary" dangerouslySetInnerHTML={{__html: data.summary}} />
+      
       <div className="email"><a href={`mailto:${c.email}`}>{c.email}</a></div>
       <div className="phone"><a href={`tel:${c.phone}`}>{c.phone}</a></div>
       <div className="address"><a href="https://goo.gl/maps/7hTSM4Ln3Wx">{c.address}</a></div>
