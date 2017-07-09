@@ -44,10 +44,14 @@ body {
     margin: 0 auto;
     padding: 1em;
   }
+
+  @media print {
+    font-size: 90%;
+  }
 }
 
 main {
-  @include breakpoint(sm) {
+  @include breakpoint(sm, true) {
     column-count: 2;
   }
 }
@@ -126,12 +130,11 @@ header {
   }
 
   .summary {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
     margin-bottom: 0;
     @include breakpoint(md) {
       order: -1;
       margin-bottom: 1rem;
-      margin-top: 0.5rem;
     }
   }
 
@@ -188,11 +191,18 @@ header {
 }
 
 .info-block {
-  margin-bottom: 1em;
   break-inside: avoid-column;
+  margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .achievements {
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   li {
     h3 {
       display: inline;
@@ -267,7 +277,7 @@ $bar-color: rgba(63, 127, 191, 0.8);
         > .bar-content {
           left: $offset;
           position: relative;
-          padding: 0.3rem;
+          padding: 0 0.3rem;
           width: $width;
         }
       }
