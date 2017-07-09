@@ -64,9 +64,8 @@ h1 {
 h2 {
   font-size: 140%;
   font-weight: bold;
-  margin: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.3em;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
 }
 
 h3 {
@@ -77,6 +76,11 @@ h3 {
 
 section {
   break-inside: avoid-column;
+
+  // remove top-margin of first heading to line up columns
+  &:first-child > h2:first-child {
+    margin: 0;
+  }
 }
 
 ul {
@@ -204,7 +208,7 @@ header {
 
 .info-block {
   break-inside: avoid-column;
-  margin-bottom: 1em;
+  margin-bottom: 0.5rem;
   &:last-child {
     margin-bottom: 0;
   }
