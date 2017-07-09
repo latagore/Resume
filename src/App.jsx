@@ -80,7 +80,7 @@ const SkillGraph = ({skills}) => {
   labels[8 - 1] = "Expert";
 
   return (
-    <div className="skill-graph" role="presentation">
+    <div className="skill-graph info-block" role="presentation">
       <div className="bars">
         {
           skills.map(
@@ -115,6 +115,14 @@ class App extends Component {
         <Header data={this.props.data} />
         <Aside data={this.props.data} />
         <main>
+          <section className="experience">
+            <h2>Experience</h2>
+            {this.props.data.experience.map((data, key) => <Experience data={data} key={key} />)}
+          </section>
+          <section className="skills">
+            <h2>Skills</h2>
+            <SkillGraph skills={this.props.data.skills} />
+          </section>
           <section className="education">
             <h2>Education</h2>
             {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
@@ -124,14 +132,6 @@ class App extends Component {
             <ul>
               {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} />)}
             </ul>
-          </section>
-          <section className="skills">
-            <h2>Skills</h2>
-            <SkillGraph skills={this.props.data.skills} />
-          </section>
-          <section className="experience">
-            <h2>Experience</h2>
-            {this.props.data.experience.map((data, key) => <Experience data={data} key={key} />)}
           </section>
         </main>
       </div>
