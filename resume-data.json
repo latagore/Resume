@@ -84,12 +84,23 @@
   "experience": [
     {
       "title": "Software Developer",
+      "organization": "Transmission Media",
+      "location": "Toronto, Ontario",
+      "startDate": "September 2016",
+      "endDate": "April 2017",
+      "info": [
+        "Built web front-end for over two thousand Manulife fund profiles. Designed and generated interactive SVG graphs that were responsive and accessible.",
+        "Planned and led a meeting for project retrospective. Reviewed hurdles and facilitated discussion."
+      ]
+    },
+    {
+      "title": "Software Developer",
       "organization": "York University",
       "location": "Toronto, Ontario",
       "startDate": "May 2015",
       "endDate": "April 2016",
       "info": [
-        "Independently ported customizations to Netdisco's new version and added new features by designing schema updates for the PostgreSQL database, visual updates to the Bootstrap web interface, and adding backend Perl server-side code.",
+        "Independently ported customizations to Netdisco's new version and added new features on the whole stack by designing schema updates for PostgreSQL, visual updates using Bootstrap, and adding backend Perl server-side code.",
         "Gathered feature requirements and ensured satisfaction by proactively meeting with users. Two out of six survey respondents indicated the software met their needs extremely well and four indicated very well."
       ]
     }, {
@@ -100,7 +111,7 @@
       "endDate": "August 2014",
       "info": [
         "Collaborated with developers and testers to test REST services. Helped in the design of test framework with JUnit 4 and guice expertise.",
-        "Created test plan for command line utility using formal     software testing techniques.",
+        "Created test plan for command line utility using formal software testing techniques.",
         "Performed accessibility testing and discovered fifty accessibility-related defects, including some that were not found during testing of the previous release. Presented tutorial on screen-reader technology to fifty team members, due to recognized expertise."
       ]
     }

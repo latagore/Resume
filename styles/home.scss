@@ -62,6 +62,7 @@ ul {
 }
 .info-block {
   margin-bottom: 1em;
+  break-inside: avoid-column;
 }
 
 .achievements {
