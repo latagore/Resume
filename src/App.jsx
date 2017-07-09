@@ -120,7 +120,7 @@ class App extends Component {
             {this.props.data.education.map((data, key) => <Education data={data} key={key} />)}
           </section>
           <section className="achievements">
-            <h2>Achievements</h2>
+            <h2>Projects</h2>
             <ul>
               {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} />)}
             </ul>
