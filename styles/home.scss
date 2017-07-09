@@ -38,6 +38,18 @@ sub {
 
 body {
   font-family: Assistant, Sans-Serif;
+
+  & > * {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+}
+
+main {
+  @include breakpoint(sm) {
+    column-count: 2;
+  }
 }
 
 h1 {
@@ -59,11 +71,19 @@ h3 {
   margin: 0;
 }
 
+section {
+  break-inside: avoid-column;
+}
+
+ul {
+  margin: 0.5em;
+  padding-left: 1em;
+}
 
 
 header {
   h1, h2 {
-    @media (min-width: 801px) {
+    @include breakpoint(md) {
       width: 75%;
     }
     @media print {
@@ -89,93 +109,84 @@ header {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  @media (min-width: 801px) {
+
+  text-align: center;
+  padding: 0 2em;
+  margin-bottom: 1rem;
+
+  @include breakpoint(md) {
     float: right;
     width: 25%;
     padding-left: 1em;
+    text-align: left;
 
     & > * {
       width: 100%;
-    }
-  }
-  @media (max-width: 800px), print {
-    text-align: center;
-    padding: 0 2em;
-    margin-bottom: 1rem;
-    .contact > * {
-      display: inline-block;
-      padding: 0 0.5em;
     }
   }
 
   .summary {
     margin-top: 0.5em;
     margin-bottom: 0;
-    @media (min-width: 801px) {
+    @include breakpoint(md) {
       order: -1;
       margin-bottom: 1rem;
       margin-top: 0.5rem;
     }
   }
 
-  .email::before {
-    content: '\f0e0';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .phone::before {
-    content: '\f095';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .address::before{
-    content: '\f015';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .github::before{
-    content: '\f09b';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .website::before{
-    content: '\f0ac';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .linkedin::before{
-    content: '\f0e1';
-    font-family: FontAwesome;
-    display: inline-block;
-    text-align: center;
-    padding-right: 0.3em;
+
+  .contact {
+    & > * {
+      display: inline-block;
+      padding: 0 0.5em;
+
+      @include breakpoint(md) {
+        display: block;
+        padding: 0;
+      }
+    }
+
+    .email::before {
+      content: '\f0e0';
+      font-family: FontAwesome;
+      display: inline-block;
+      padding-right: 0.3em;
+    }
+    .phone::before {
+      content: '\f095';
+      font-family: FontAwesome;
+      display: inline-block;
+      padding-right: 0.3em;
+    }
+    .address::before {
+      content: '\f015';
+      font-family: FontAwesome;
+      display: inline-block;
+      padding-right: 0.3em;
+    }
+    .github::before {
+      content: '\f09b';
+      font-family: FontAwesome;
+      display: inline-block;
+      padding-right: 0.3em;
+    }
+    .website::before {
+      content: '\f0ac';
+      font-family: FontAwesome;
+      display: inline-block;
+      padding-right: 0.3em;
+    }
+    .linkedin::before {
+      content: '\f0e1';
+      font-family: FontAwesome;
+      display: inline-block;
+      text-align: center;
+      padding-right: 0.3em;
+    }
   }
 }
 
-main {
-  @media (min-width: 600px), print {
-    column-count: 2;
-  }
-}
-
-section {
-  break-inside: avoid-column;
-}
-
-ul {
-  margin: 0.5em;
-  padding-left: 1em;
-}
-.resume {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 1em;
-}
 .info-block {
   margin-bottom: 1em;
   break-inside: avoid-column;
