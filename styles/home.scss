@@ -1,6 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Assistant:300,600|Merriweather+Sans:400");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
+@function getMediaQuery($size, $print) {
+  @return "(min-width: #{$size})" + if($print, ", print", "");
+}
+
+@mixin breakpoint($class, $print: false) {
+  @if $class == xs {
+    @media #{getMediaQuery(0, $print)} { @content; }
+  }
+
+  @else if $class == sm {
+    @media #{getMediaQuery(768px, $print)} { @content; }
+  }
+
+  @else if $class == md {
+    @media #{getMediaQuery(992px, $print)} { @content; }
+  }
+
+  @else if $class == lg {
+    @media #{getMediaQuery(1200px, $print)} { @content; }
+  }
+
+  @else {
+    @error "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
 sup, sub {
   vertical-align: baseline;
   position: relative;
