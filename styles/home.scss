@@ -37,7 +37,7 @@ body {
   & > * {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 1rem 1rem 10rem 1rem;
     @media print {
       padding: 0;
     }
