@@ -27,13 +27,8 @@
   }
 }
 
-sup, sub {
-  vertical-align: baseline;
-  position: relative;
-  top: -0.4em;
-}
-sub {
-  top: 0.4em;
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 body {
@@ -84,10 +79,21 @@ ul {
   padding-left: 1em;
 }
 
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
 
 header {
   h1, h2 {
     @include breakpoint(md) {
+      position: relative;
+      left: 25%;
       width: 75%;
     }
     @media print {
@@ -119,7 +125,7 @@ header {
   margin-bottom: 1rem;
 
   @include breakpoint(md) {
-    float: right;
+    float: left;
     width: 25%;
     padding-left: 1em;
     text-align: left;
