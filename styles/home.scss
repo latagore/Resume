@@ -99,6 +99,9 @@ sub {
 
 
 header {
+  @include breakpoint(md) {
+    margin-bottom: 1.5rem;
+  }
   h1, h2 {
     @include breakpoint(md) {
       position: relative;
@@ -121,7 +124,6 @@ header {
     text-align: center;
 
   }
-
 }
 
 .aside {
