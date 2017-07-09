@@ -45,16 +45,89 @@ header {
     }
   }
   h1 {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
     text-align: center;
   }
 
   .job-title {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin-top: -0.25rem;
+    margin-bottom: 0.25rem;
     padding: 0;
     text-align: center;
 
+  }
+
+}
+
+.aside {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  @media (min-width: 801px) {
+    float: right;
+    width: 25%;
+    padding-left: 1em;
+
+    & > * {
+      width: 100%;
+    }
+  }
+  @media (max-width: 800px), print {
+    text-align: center;
+    padding: 0 2em;
+    margin-bottom: 1rem;
+    .contact > * {
+      display: inline-block;
+      padding: 0 0.5em;
+    }
+  }
+
+  .summary {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    @media (min-width: 801px) {
+      order: -1;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .email::before {
+    content: '\f0e0';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .phone::before {
+    content: '\f095';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .address::before{
+    content: '\f015';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .github::before{
+    content: '\f09b';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .website::before{
+    content: '\f0ac';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 0.3em;
+  }
+  .linkedin::before{
+    content: '\f0e1';
+    font-family: FontAwesome;
+    display: inline-block;
+    text-align: center;
+    padding-right: 0.3em;
   }
 }
 
@@ -99,67 +172,6 @@ ul {
   }
 }
 
-.aside {
-  @media (min-width: 801px) {
-    float: right;
-    width: 25%;
-    padding-left: 1em;
-  }
-  @media (max-width: 800px), print {
-    text-align: center;
-    padding: 0 2em;
-    > * {
-      display: inline-block;
-      padding: 0 0.5em;
-    }
-
-    & {
-      margin-bottom: 2em;
-    }
-  }
-
-  .summary {
-    margin-top: 0;
-  }
-
-  .email::before {
-    content: '\f0e0';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .phone::before {
-    content: '\f095';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .address::before{
-    content: '\f015';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .github::before{
-    content: '\f09b';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .website::before{
-    content: '\f0ac';
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 0.3em;
-  }
-  .linkedin::before{
-    content: '\f0e1';
-    font-family: FontAwesome;
-    display: inline-block;
-    text-align: center;
-    padding-right: 0.3em;
-  }
-}
 
 $bar-width: 0.7;
 $bar-color: rgba(63, 127, 191, 0.8);
