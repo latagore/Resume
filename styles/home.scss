@@ -240,6 +240,7 @@ header {
 
 $bar-width: 0.7;
 $bar-color: rgba(63, 127, 191, 0.8);
+$grid-segments: 10;
 .skill-graph {
   position: relative;
   .labels {
@@ -247,9 +248,10 @@ $bar-color: rgba(63, 127, 191, 0.8);
     z-index: 1;
     height: 2em; /* prevent labels from wrapping to next column */
     font-size: 70%;
-    @for $i from 1 to 10 {
+    background: white;
+    @for $i from 1 to $grid-segments {
       .label-#{$i} {
-        left: $bar-width * percentage(($i) / 10);
+        left: $bar-width * percentage(($i) / $grid-segments);
         border-left: 1px solid #CCC;
         padding-top: 1em;
         padding-left: 0.25em;
@@ -258,24 +260,19 @@ $bar-color: rgba(63, 127, 191, 0.8);
       }
     }
   }
+  .background {
+    @for $i from 1 through ($grid-segments + 1) {
+      .gridline-#{$i} {
+        $width: percentage(($i - 1) * $bar-width / $grid-segments);
+        left: $width;
+        border-left: 1px solid #DDD;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+  }
   .bars {
-    /* create 10 grid lines and hide the rest*/
-    $epsilon: 0.01;
-    background-image: linear-gradient(
-      to right,
-      transparent,
-      /* add epsilon to include the last line */
-      transparent percentage($bar-width + $epsilon),
-      white percentage($bar-width + $epsilon),
-      white
-    ), repeating-linear-gradient(
-      to right,
-      #CCC,
-      #CCC 1px,
-      #FFF 1px,
-      #FFF #{$bar-width * 10%}
-    );
-
     font-size: 90%;
     .subskills {
       font-size: 80%;
@@ -286,8 +283,8 @@ $bar-color: rgba(63, 127, 191, 0.8);
     }
 
     @for $i from 1 through 10 {
-      $offset: percentage($i * $bar-width / 10);
-      $width: percentage(1 - ($i * $bar-width / 10));
+      $offset: percentage($i * $bar-width / $grid-segments);
+      $width: percentage(1 - ($i * $bar-width / $grid-segments));
 
       & .bar-#{$i}  {
 
