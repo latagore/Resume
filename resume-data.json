@@ -10,7 +10,7 @@
     "website": "stevenxu.xyz",
     "linkedin": "stevenxu2"
   },
-  "summary": "Web developer finding ways to apply theory to the real world. Interested in building accessible solutions, particularly those with sensory impairments. Go-to expert for git, ES6, HTTP and Slack. Likes to poke fun at friends by <a href='https://latagore.github.io/wheel-of-fortune/'>coding up their startup ideas.</a>",
+  "summary": "Web developer who is a go-to expert for git, ES6, accessibility and Slack. Keen eye for polishing features, syntax errors and spelling mistakes. Likes to poke fun at friends by <a href='https://latagore.github.io/wheel-of-fortune/'>coding up their startup ideas.</a>",
   "education": [
     {
       "organization": "York University",
@@ -23,7 +23,7 @@
         "major": 6.48,
         "max": 9
       }, "info": [
-        "Courses: User Interface Design, Web Development, Algorithms, Concurrency"
+        "Courses: Web Development, User Interface Design, Algorithms, Concurrency"
       ]
     }, {
       "organization": "Lighthouse Labs",
