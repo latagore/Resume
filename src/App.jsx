@@ -26,6 +26,23 @@ const Aside = ({data}) => {
   )
 }
 
+const Info = ({data}) => {
+  if (data.description) {
+    console.log(data);
+    return (
+      <div className="info-bullet">
+        <p>{data.description}</p>
+        <ul className="skill-list">
+          {data.skills && data.skills.map((skill, i) => <li key={i}>{skill}</li>)}
+        </ul>
+      </div>
+    )
+  } else {
+    console.log(data);
+    return <div>{data}</div>
+  }
+}
+
 const Experience = ({data}) => {
   return (
     <div className="info-block">
@@ -35,7 +52,7 @@ const Experience = ({data}) => {
       {data.info &&
         <ul className="info">
         {
-          data.info.map((info, key) => <li key={key}>{info}</li>)
+          data.info.map((info, key) => <li key={key}><Info data={info} /></li>)
         }
         </ul>
       }
@@ -55,7 +72,7 @@ const Education = ({data}) => {
             data.gpa && <li>Overall GPA: {data.gpa.overall} out of {data.gpa.max}. Major GPA: {data.gpa.major} out of {data.gpa.max}</li>
           }
           {
-            data.info && data.info.map((info, key) => <li key={key}>{info}</li>)
+            data.info && data.info.map((info, key) => <li key={key}><Info data={info} /></li>)
           }
         </ul>
       }
@@ -67,7 +84,7 @@ const Achievement = ({data}) => {
   return (
     <li>
       <h3>{data.title}</h3>
-      {data.info.map((info, key) => <p key={key} dangerouslySetInnerHTML={{__html: info}}></p>)}
+      <Info data={data} />
     </li>
   )
 }

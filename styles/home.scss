@@ -216,6 +216,35 @@ header {
   }
 }
 
+.info-bullet p {
+  display: inline;
+}
+.skill-list {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  &::before {
+    content: " (";
+    display: inline;
+  }
+  &::after {
+    content: ")";
+    display: inline;
+  }
+  li {
+    display: inline;
+
+    &::after {
+      content: ", ";
+      display: inline;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
 .achievements {
   ul {
     margin-top: 0;
@@ -287,7 +316,6 @@ $grid-segments: 10;
       $width: percentage(1 - ($i * $bar-width / $grid-segments));
 
       & .bar-#{$i}  {
-
         background: linear-gradient(to right, $bar-color, $bar-color $offset,  transparent $offset,  transparent);
         > .bar-content {
           left: $offset;
