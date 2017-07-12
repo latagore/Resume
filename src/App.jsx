@@ -18,7 +18,7 @@ const Info = ({data, highlightedSkills}) => {
           {data.skills && data.skills.map(
             (skill, i) => {
               let className = "text";
-              if (highlightedSkills.has(skill)) {
+              if (highlightedSkills.hasTechSkill(skill)) {
                 className += " highlighted";
               }
               return <li key={i}><span className={className}>{skill}</span></li>
@@ -99,17 +99,35 @@ const Achievement = ({data, highlightedSkills}) => {
 class App extends Component {
   constructor() {
     super();
+
+    const list = [];
+    list.hasTechSkill = function (skill) {
+      let filtered = list.filter((el) => el.techSkills.has(skill));
+      return filtered.length > 0;
+    }
+    list.indexOfSkill = function (skill) {
+      let index = -1;
+      list.forEach((el, i) => {
+        if (index === -1 && el.name === skill) { index = i; }
+      });
+      return index;
+    }
+
     this.state = {
-      highlightedSkills: new Set()
+      highlightedSkills: list
     };
   }
 
   _onSkillHighlightToggle = (skill) => {
     this.setState((state) => {
-      if (state.highlightedSkills.has(skill)) {
-        state.highlightedSkills.delete(skill);
+      const index = state.highlightedSkills.indexOfSkill(skill);
+      if (index > -1) {
+        state.highlightedSkills.splice(index, 1);
       } else {
-        state.highlightedSkills.add(skill)
+        const obj = this.props.data.skills.filter((el) => el.name === skill)[0];
+        console.log(obj);
+        obj.techSkills = new Set([...obj.majorSkills, ...obj.minorSkills]);
+        state.highlightedSkills.push(obj);
       }
       return state;
     })

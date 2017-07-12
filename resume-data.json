@@ -61,15 +61,21 @@
     {
       "name": "Web Frontend",
       "strength": 0.6,
-      "subskills": [
-        "React", "Sass", "jQuery","Foundation"
+      "majorSkills": [
+        "React", "Sass", "jQuery", "Foundation"
+      ],
+      "minorSkills": [
+        "ES6", "d3.js", "SVG", "Bootstrap", "HTML5"
       ]
     },
     {
       "name": "Web Backend",
       "strength": 0.6,
-      "subskills": [
+      "majorSkills": [
         "Node", "Java", "PostgreSQL"
+      ],
+      "minorSkills": [
+        "ES6", "Perl"
       ]
     },
     {

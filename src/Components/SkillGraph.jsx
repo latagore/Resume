@@ -32,8 +32,8 @@ class SkillGraph extends Component {
                 <div key={key} className={`bar bar-${skill.strength * GRAPH_SEGMENTS}`} data-skill={skill.name} onClick={this._onSkillClick}>
                   <div className="bar-content">
                     <span>{skill.name}</span>
-                    {skill.subskills && <br />}
-                    {skill.subskills && <span className="subskills">{skill.subskills.join(", ")}</span>}
+                    {skill.majorSkills && <br />}
+                    {skill.majorSkills && <span className="subSkills">{skill.majorSkills.join(", ")}</span>}
                   </div>
                 </div>
               )
