@@ -14,18 +14,20 @@ const Info = ({data, highlightedSkills}) => {
     return (
       <div className="info-bullet">
         <p dangerouslySetInnerHTML={{__html: data.description}} />
-        <ul className="skill-list">
-          {data.skills && data.skills.map(
-            (skill, i) => {
-              let className = "text";
-              let skillCategory = highlightedSkills.getSkillCategoryByTechSkill(skill);
-              if (skillCategory) {
-                className += ` highlighted-${skillCategory.index}`;
+        {data.skills &&
+          <ul className="skill-list">
+            {data.skills.map(
+              (skill, i) => {
+                let className = "text";
+                let skillCategory = highlightedSkills.getSkillCategoryByTechSkill(skill);
+                if (skillCategory) {
+                  className += ` highlighted-${skillCategory.index}`;
+                }
+                return <li key={i}><span className={className}>{skill}</span></li>
               }
-              return <li key={i}><span className={className}>{skill}</span></li>
-            }
-          )}
-        </ul>
+            )}
+          </ul>
+        }
       </div>
     )
   } else {
