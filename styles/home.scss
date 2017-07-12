@@ -244,10 +244,10 @@ $highlight-color: lighten($primary-color, 30%);
     .text {
       position: relative;
       z-index: -1;
-      display: inline-block;
+      display: inline;
       border-radius: 0.4em;
-      padding: 0.1em 0.2em;
-      margin: -0.1em -0.2em;
+      padding: 0.2em 0.1em;
+      margin: -0.2em -0.1em;
       &.highlighted {
         background: $highlight-color;
       }
