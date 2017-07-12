@@ -219,8 +219,12 @@ header {
 
 
 $highlight-color: lighten($primary-color, 30%);
-.info-bullet p {
+.info-bullet {
   display: inline;
+  p {
+    display: inline;
+  }
+
 }
 .skill-list {
   display: inline;
