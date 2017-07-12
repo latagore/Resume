@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Aside from './Components/Aside.jsx';
 
 const Header = ({data}) => {
   return (
@@ -32,6 +31,24 @@ const Info = ({data, highlightedSkills}) => {
     return <div dangerouslySetInnerHTML={{__html: data}} />
   }
 }
+
+const Aside = ({data, onSkillHighlight}) => {
+  const c = data.contact;
+  return (
+    <aside className="aside">
+      <div className="contact">
+        <div className="email"><a href={`mailto:${c.email}`}>{c.email}</a></div>
+        <div className="phone"><a href={`tel:${c.phone}`}>{c.phone}</a></div>
+        <div className="address"><a href="https://goo.gl/maps/7hTSM4Ln3Wx">{c.address}</a></div>
+        <div className="github"><a href={`https://github.com/${c.github}`}>{c.github}</a></div>
+        <div className="website"><a href={`https://${c.website}`}>{c.website}</a></div>
+        <div className="linkedin"><a href={`https://www.linkedin.com/in/${c.linkedin}`}>{c.linkedin}</a></div>
+      </div>
+      <p className="summary" dangerouslySetInnerHTML={{__html: data.summary}} />
+    </aside>
+  )
+}
+
 
 const Experience = ({data, highlightedSkills}) => {
   return (
@@ -146,7 +163,7 @@ class App extends Component {
     return (
       <div className="resume">
         <Header data={this.props.data} />
-        <Aside data={this.props.data} onSkillHighlightToggle={this._onSkillHighlightToggle}/>
+        <Aside data={this.props.data} />
         <main>
           <section className="experience">
             <h2>Experience</h2>
