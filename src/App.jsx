@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import SkillGraph from './components/SkillGraph.jsx'
 const Header = ({data}) => {
   return (
     <header>
@@ -96,50 +96,6 @@ const Achievement = ({data, highlightedSkills}) => {
   )
 }
 
-const SkillGraph = ({skills}) => {
-  const GRAPH_SEGMENTS = 10;
-  // create an array of empty elements
-  const labels = new Array(GRAPH_SEGMENTS).fill(undefined);
-  labels[3 - 1] = "Basic";
-  labels[6 - 1] = "Pro";
-  labels[8 - 1] = "Expert";
-
-  return (
-    <div className="skill-graph info-block" role="presentation">
-      <div className="background" role="presentation">
-        {
-          new Array(GRAPH_SEGMENTS + 1).fill(1) // create dummy array to iterate from 1 to 11. add one to add last gridline
-            .map((el, i) => {
-              return <div key={i} className={`gridline-${i + 1}`} role="presentation"></div>
-            })
-        }
-      </div>
-      <div className="bars">
-        {
-          skills.map(
-            (skill, key) => (
-              <div key={key} className={`bar bar-${skill.strength * GRAPH_SEGMENTS}`}>
-                <div className="bar-content">
-                  <span>{skill.name}</span>
-                  {skill.subskills && <br />}
-                  {skill.subskills && <span className="subskills">{skill.subskills.join(", ")}</span>}
-                </div>
-              </div>
-            )
-          )
-        }
-      </div>
-      <div className="labels">
-      {
-        labels.map(
-          (label, i) => label && <span key={i} className={`label-${i + 1}`} role="presentation">{label}</span>
-        )
-      }
-      </div>
-    </div>
-  )
-}
-
 class App extends Component {
   constructor() {
     super();
@@ -171,7 +127,7 @@ class App extends Component {
           </section>
           <section className="skills">
             <h2>Skills</h2>
-            <SkillGraph skills={this.props.data.skills} />
+            <SkillGraph skills={this.props.data.skills} onSkillHighlightToggle={this._onSkillHighlightToggle}/>
           </section>
           <section className="education">
             <h2>Education</h2>
