@@ -37,7 +37,7 @@
         "Completed eight projects in eight weeks. Two were additional personal projects."
       ],
       "skills": {
-        "major": ["Node", "React", "ES6", "Sass"],
+        "major": ["Node", "React", "ES6", "Sass", "git"],
         "minor": ["Javascript", "HTML5", "CSS"]
       }
     }
@@ -46,7 +46,7 @@
     {
       "title": "E-Commerce Website",
       "description": "Built an online store from scratch in five days with three people. Led overall design of user flows and data. Created wireframes and Javascript functionality.",
-      "skills": ["Node", "ES6", "Foundation", "HTML5"]
+      "skills": ["Node", "ES6", "Foundation", "HTML5", "git"]
     }, {
       "title": "3D Game Experiment",
       "description": "Studied effectiveness of two types of mini-maps. Learned Unity and C<sup>♯</sup> to create game from scratch, even though coding not required.",
@@ -54,7 +54,7 @@
     }, {
       "title": "Personal Website",
       "description": "Built website by learning Foundation, Sass, Gulp, and Node for the first time. Website presents accomplishments using custom jQuery gallery and CSS3 animations.",
-      "skills": ["Node", "Foundation", "Sass", "jQuery"]
+      "skills": ["Node", "Foundation", "Sass", "jQuery", "git"]
     }
   ],
   "skills": [
@@ -105,7 +105,7 @@
       "info": [
         {
           "description": "Built web front-end for over two thousand Manulife fund profiles. Designed and generated interactive SVG graphs that were responsive and accessible.",
-          "skills": ["d3.js", "jQuery", "Foundation", "SVG"]
+          "skills": ["d3.js", "jQuery", "Foundation", "SVG", "git"]
         },
         "Planned and led a meeting for project retrospective. Reviewed hurdles and facilitated discussion."
       ]
@@ -119,7 +119,7 @@
       "info": [
         {
           "description": "Independently ported customizations to Netdisco's new version and added new features on the full stack.",
-          "skills": ["PostgreSQL", "Bootstrap", "Perl"]
+          "skills": ["PostgreSQL", "Perl", "Bootstrap", "git", "Unix"]
         },
         "Gathered feature requirements and ensured satisfaction by proactively meeting with users. Two out of six survey respondents indicated the software met their needs extremely well and four indicated very well."
       ]
@@ -132,7 +132,7 @@
       "info": [
         {
           "description": "Collaborated with developers and testers to test REST services. Helped in the design of test framework with JUnit 4 and guice expertise.",
-          "skills": ["Java"]
+          "skills": ["Java", "Unix", "Software Testing", "Virtual Machines"]
         },
         "Created test plan for command line utility using formal software testing techniques.",
         "Performed accessibility testing and discovered fifty accessibility-related defects, including some that were not found during testing of the previous release. Presented tutorial on screen-reader technology to fifty team members, due to recognized expertise."

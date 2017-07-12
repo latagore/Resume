@@ -103,7 +103,7 @@ class App extends Component {
 
     const list = [];
     list.getSkillCategoryByTechSkill = function (skill) {
-      let filtered = list.filter((el) => el.techSkills.has(skill));
+      let filtered = list.filter((el) => el.techSkills.has(skill) || el.name === skill);
       return filtered[0];
     }
     list.indexOfSkill = function (skill) {
