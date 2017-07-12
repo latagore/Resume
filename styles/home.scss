@@ -283,9 +283,9 @@ $highlight-color: lighten($primary-color, 30%);
       position: relative;
       z-index: -1;
       display: inline;
-      border-radius: 0.4em;
-      padding: 0.2em 0.1em;
-      margin: -0.2em -0.1em;
+      border-radius: 0.1em;
+      padding: 0.05em 0.1em;
+      margin: -0.05em -0.1em;
 
       @each $color in $highlight-colors {
         $i: index($highlight-colors, $color);
