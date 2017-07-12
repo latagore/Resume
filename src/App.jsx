@@ -18,8 +18,9 @@ const Info = ({data, highlightedSkills}) => {
           {data.skills && data.skills.map(
             (skill, i) => {
               let className = "text";
-              if (highlightedSkills.hasTechSkill(skill)) {
-                className += " highlighted";
+              let skillCategory = highlightedSkills.getSkillCategoryByTechSkill(skill);
+              if (skillCategory) {
+                className += ` highlighted-${skillCategory.index}`;
               }
               return <li key={i}><span className={className}>{skill}</span></li>
             }
@@ -101,9 +102,9 @@ class App extends Component {
     super();
 
     const list = [];
-    list.hasTechSkill = function (skill) {
+    list.getSkillCategoryByTechSkill = function (skill) {
       let filtered = list.filter((el) => el.techSkills.has(skill));
-      return filtered.length > 0;
+      return filtered[0];
     }
     list.indexOfSkill = function (skill) {
       let index = -1;
@@ -124,9 +125,16 @@ class App extends Component {
       if (index > -1) {
         state.highlightedSkills.splice(index, 1);
       } else {
-        const obj = this.props.data.skills.filter((el) => el.name === skill)[0];
-        console.log(obj);
-        obj.techSkills = new Set([...obj.majorSkills, ...obj.minorSkills]);
+        // find the skill category and the index at the some time
+        let objIndex;
+        const obj = this.props.data.skills.filter((el, i) => {
+          if (el.name === skill) {
+            objIndex = i + 1;
+            return true;
+          }
+        })[0];
+        obj.techSkills = new Set([...(obj.majorSkills || []), ...(obj.minorSkills || [])]);
+        obj.index = objIndex;
         state.highlightedSkills.push(obj);
       }
       return state;

@@ -2,7 +2,10 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
 $sidebar-width: 25%;
-$primary-color: rgba(63, 127, 191, 0.8);
+$primary-color: #2419B2;
+$highlight-colors: transparentize(#5189BC, 0.5),
+  transparentize(#8B54C1, 0.5),
+  transparentize(#5189BC, 0.5);
 
 @function getMediaQuery($size, $print) {
   @return "(min-width: #{$size})" + if($print, ", print", "");
@@ -280,8 +283,12 @@ $highlight-color: lighten($primary-color, 30%);
       border-radius: 0.4em;
       padding: 0.2em 0.1em;
       margin: -0.2em -0.1em;
-      &.highlighted {
-        background: $highlight-color;
+
+      @each $color in $highlight-colors {
+        $i: index($highlight-colors, $color);
+        &.highlighted-#{$i} {
+          background-color: $color;
+        }
       }
     }
 
@@ -320,7 +327,7 @@ $highlight-color: lighten($primary-color, 30%);
 
 
 $bar-width: 0.7;
-$bar-color: $primary-color;
+$bar-color: transparentize($primary-color, 0.2);
 $grid-segments: 10;
 .skill-graph {
   position: relative;
