@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 class SkillGraph extends Component {
 
   _onSkillClick = (event) => {
-    console.log(event.currentTarget.dataset.skill);
     this.props.onSkillHighlightToggle(event.currentTarget.dataset.skill);
   }
 
