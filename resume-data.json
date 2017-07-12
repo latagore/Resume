@@ -11,6 +11,7 @@
     "linkedin": "stevenxu2"
   },
   "summary": "Web developer who is a go-to expert for git, ES6, accessibility and Slack. Keen eye for polishing features, syntax errors and spelling mistakes. Likes to poke fun at friends by <a href='https://latagore.github.io/wheel-of-fortune/'>coding up their startup ideas.</a>",
+  "importantSkills": ["Node", "PostgreSQL", "Bootstrap", "Foundation"],
   "education": [
     {
       "organization": "York University",
