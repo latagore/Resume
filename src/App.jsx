@@ -14,7 +14,7 @@ const Info = ({data, highlightedSkills}) => {
   if (data.description) {
     return (
       <div className="info-bullet">
-        <p>{data.description}</p>
+        <p dangerouslySetInnerHTML={{__html: data.description}} />
         <ul className="skill-list">
           {data.skills && data.skills.map(
             (skill, i) => {
@@ -29,7 +29,7 @@ const Info = ({data, highlightedSkills}) => {
       </div>
     )
   } else {
-    return <div>{data}</div>
+    return <div dangerouslySetInnerHTML={{__html: data}} />
   }
 }
 
