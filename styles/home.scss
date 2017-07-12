@@ -136,24 +136,26 @@ header {
   padding: 0 2em;
   margin-bottom: 1rem;
 
+  & > * {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    @include breakpoint(md) {
+      margin-bottom: 1rem;
+    }
+  }
+
   @include breakpoint(md) {
     float: left;
     width: $sidebar-width;
     text-align: left;
 
     padding: 0 1.5rem 0 0;
-
-    & > * {
-      width: 100%;
-    }
   }
 
   .summary {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
     @include breakpoint(md) {
       order: -1;
-      margin-bottom: 1rem;
     }
   }
 
@@ -205,6 +207,36 @@ header {
       display: inline-block;
       text-align: center;
       padding-right: 0.3em;
+    }
+  }
+
+  .important-skills {
+    @media print {
+      display: none;
+    }
+
+    > * {
+      display: inline;
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+
+    h3 {
+      padding-right: 0.3em;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 0.3em;
+      margin: 0.1em;
+      border: 1px solid grey;
     }
   }
 }
