@@ -241,7 +241,7 @@ $highlight-color: lighten($primary-color, 30%);
       position: relative;
       z-index: -1;
       display: inline-block;
-      border-radius: 3px;
+      border-radius: 0.4em;
       padding: 0.1em 0.2em;
       margin: -0.1em -0.2em;
       &.highlighted {
