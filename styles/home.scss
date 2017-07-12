@@ -2,6 +2,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
 $sidebar-width: 25%;
+$primary-color: rgba(63, 127, 191, 0.8);
 
 @function getMediaQuery($size, $print) {
   @return "(min-width: #{$size})" + if($print, ", print", "");
@@ -216,6 +217,8 @@ header {
   }
 }
 
+
+$highlight-color: lighten($primary-color, 30%);
 .info-bullet p {
   display: inline;
 }
@@ -223,6 +226,7 @@ header {
   display: inline;
   padding: 0;
   margin: 0;
+  font-style: italic;
   &::before {
     content: " (";
     display: inline;
@@ -233,9 +237,21 @@ header {
   }
   li {
     display: inline;
+    .text {
+      position: relative;
+      z-index: -1;
+      display: inline-block;
+      border-radius: 3px;
+      padding: 0.1em 0.2em;
+      margin: -0.1em -0.2em;
+      &.highlight {
+        background: $highlight-color;
+      }
+    }
 
     &::after {
       content: ", ";
+      white-space: pre;
       display: inline;
     }
 
@@ -268,7 +284,7 @@ header {
 
 
 $bar-width: 0.7;
-$bar-color: rgba(63, 127, 191, 0.8);
+$bar-color: $primary-color;
 $grid-segments: 10;
 .skill-graph {
   position: relative;

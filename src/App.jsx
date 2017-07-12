@@ -33,7 +33,7 @@ const Info = ({data}) => {
       <div className="info-bullet">
         <p>{data.description}</p>
         <ul className="skill-list">
-          {data.skills && data.skills.map((skill, i) => <li key={i}>{skill}</li>)}
+          {data.skills && data.skills.map((skill, i) => <li key={i}><span className="text">{skill}</span></li>)}
         </ul>
       </div>
     )
