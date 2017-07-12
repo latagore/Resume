@@ -49,8 +49,7 @@
       "skills": ["Node", "ES6", "Foundation", "HTML5", "git"]
     }, {
       "title": "3D Game Experiment",
-      "description": "Studied effectiveness of two types of mini-maps. Learned Unity and C<sup>♯</sup> to create game from scratch, even though coding not required.",
-      "skills": ["C#", "Unity"]
+      "description": "Studied effectiveness of two types of mini-maps. Learned Unity and C<sup>♯</sup> to create game from scratch, even though coding not required."
     }, {
       "title": "Personal Website",
       "description": "Built website by learning Foundation, Sass, Gulp, and Node for the first time. Website presents accomplishments using custom jQuery gallery and CSS3 animations.",
