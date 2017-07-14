@@ -3,12 +3,19 @@
 
 $sidebar-width: 25%;
 $primary-color: #2419B2;
-$highlight-colors: transparentize(#5189BC, 0.5),
-  transparentize(#8B54C1, 0.5),
-  transparentize(#655DC5, 0.5),
-  transparentize(#A583C5, 0.5),
-  transparentize(#80A2C0, 0.5),
-  transparentize(#8E8BC9, 0.5);
+$secondary-colors:
+  #5189BC,
+  #8B54C1,
+  #655DC5,
+  #A583C5,
+  #80A2C0,
+  #8E8BC9,
+  #5189BC,
+  #8B54C1,
+  #655DC5,
+  #A583C5,
+  #80A2C0,
+  #8E8BC9;
 
 @function getMediaQuery($size, $print) {
   @return "(min-width: #{$size})" + if($print, ", print", "");
@@ -287,10 +294,10 @@ $highlight-color: lighten($primary-color, 30%);
       padding: 0.05em 0.1em;
       margin: -0.05em -0.1em;
 
-      @each $color in $highlight-colors {
-        $i: index($highlight-colors, $color);
+      @each $color in $secondary-colors {
+        $i: index($secondary-colors, $color);
         &.highlighted-#{$i} {
-          background-color: $color;
+          background-color: transparentize($color, 0.5);
         }
       }
     }
@@ -337,7 +344,7 @@ $grid-segments: 10;
   position: relative;
   .labels {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: 2em; /* prevent labels from wrapping to next column */
     font-size: 70%;
     background: white;
@@ -353,14 +360,20 @@ $grid-segments: 10;
     }
   }
   .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    
     @for $i from 1 through ($grid-segments + 1) {
       .gridline-#{$i} {
         $width: percentage(($i - 1) * $bar-width / $grid-segments);
         left: $width;
-        border-left: 1px solid #DDD;
+        border-left: 1px solid transparentize(#555, 0.8);
         height: 100%;
         position: absolute;
-        z-index: -1;
       }
     }
   }
@@ -373,18 +386,26 @@ $grid-segments: 10;
     .bar {
       margin: 3px 0; // need to use pixels; otherwise margins won't be pixel perfect on chrome
       cursor: pointer;
+      position: relative;
+      // z-index: -1;
+    }
+
+    @for $i from 1 through 10 {
+      .bar:nth-child(#{$i - 1}) {
+        $bar-color: nth($secondary-colors, $i);
+        $bar-hover-color: transparentize($bar-color, 0.5);
+        background-color: $bar-color;
+        &:hover {
+          background-color: $bar-hover-color;
+        }
+      }
     }
 
     @for $i from 1 through 10 {
       $offset: percentage($i * $bar-width / $grid-segments);
       $width: percentage(1 - ($i * $bar-width / $grid-segments));
-
       .bar-#{$i}  {
-        background: linear-gradient(to right, $bar-color, $bar-color $offset,  transparent $offset,  transparent);
-
-        &:hover {
-          background: linear-gradient(to right, $bar-hover-color, $bar-hover-color $offset,  transparent $offset,  transparent);
-        }
+        background: linear-gradient(to right, transparent, transparent $offset,  white $offset,  white);
 
         > .bar-content {
           left: $offset;
