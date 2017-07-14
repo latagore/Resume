@@ -297,10 +297,25 @@ $highlight-color: lighten($primary-color, 30%);
       padding: 0.05em 0.1em;
       margin: -0.05em -0.1em;
 
+      background-position: 100% 0%;
+      transition: background-position 0.2s ease-out;
+
       @each $color in $secondary-colors {
         $i: index($secondary-colors, $color);
         &.highlighted-#{$i} {
-          background-color: transparentize($color, 0.5);
+          $highlight-color: transparentize($color, 0.5);
+          $bg-size: 250;
+          $ratio: 100 / $bg-size;
+          background: linear-gradient(
+            to left,
+            white,
+            white 30%,
+            $highlight-color 50%,
+            $highlight-color
+          );
+          background-size: 400% 100%;
+          background-position: 0% 0%;
+          transition: background-position 0.2s ease-out;
         }
       }
     }
@@ -398,6 +413,7 @@ $grid-segments: 10;
         $bar-color: nth($secondary-colors, $i);
         $bar-hover-color: transparentize($bar-color, 0.5);
         background-color: $bar-color;
+        transition: background-color 0.2s ease-out;
         &:hover {
           background-color: $bar-hover-color;
         }
