@@ -272,13 +272,14 @@ $highlight-color: lighten($primary-color, 30%);
   p {
     display: inline;
   }
-
 }
+
 .skill-list {
   display: inline;
   padding: 0;
   margin: 0;
   font-style: italic;
+
   &::before {
     content: " (";
     display: inline;
@@ -289,6 +290,17 @@ $highlight-color: lighten($primary-color, 30%);
   }
   li {
     display: inline;
+
+    &::after {
+      content: ", ";
+      white-space: pre;
+      display: inline;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
     .text {
       position: relative;
       z-index: -1;
@@ -297,6 +309,8 @@ $highlight-color: lighten($primary-color, 30%);
       padding: 0.05em 0.1em;
       margin: -0.05em -0.1em;
 
+      // FIXME this background stuff was mostly brute forced...
+      // don't really understand it all perfectly
       transition: background-position 0.2s ease-out;
       background-position: 99% 0%;
       &.highlighted {
@@ -307,8 +321,6 @@ $highlight-color: lighten($primary-color, 30%);
         $i: index($secondary-colors, $color);
         &.category-#{$i} {
           $highlight-color: transparentize($color, 0.5);
-          $bg-size: 250;
-          $ratio: 100 / $bg-size;
           background-image: linear-gradient(
             to left,
             white,
@@ -317,21 +329,8 @@ $highlight-color: lighten($primary-color, 30%);
             $highlight-color
           );
           background-size: 400% 100%;
-          transition: background-position 0.2s ease-out;
         }
       }
-
-
-    }
-
-    &::after {
-      content: ", ";
-      white-space: pre;
-      display: inline;
-    }
-
-    &:last-child::after {
-      display: none;
     }
   }
 }
