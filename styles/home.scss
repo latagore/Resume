@@ -297,16 +297,19 @@ $highlight-color: lighten($primary-color, 30%);
       padding: 0.05em 0.1em;
       margin: -0.05em -0.1em;
 
-      background-position: 100% 0%;
       transition: background-position 0.2s ease-out;
+      background-position: 99% 0%;
+      &.highlighted {
+        background-position: 0% 0%;
+      }
 
       @each $color in $secondary-colors {
         $i: index($secondary-colors, $color);
-        &.highlighted-#{$i} {
+        &.category-#{$i} {
           $highlight-color: transparentize($color, 0.5);
           $bg-size: 250;
           $ratio: 100 / $bg-size;
-          background: linear-gradient(
+          background-image: linear-gradient(
             to left,
             white,
             white 30%,
@@ -314,10 +317,11 @@ $highlight-color: lighten($primary-color, 30%);
             $highlight-color
           );
           background-size: 400% 100%;
-          background-position: 0% 0%;
           transition: background-position 0.2s ease-out;
         }
       }
+
+
     }
 
     &::after {

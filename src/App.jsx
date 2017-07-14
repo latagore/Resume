@@ -21,7 +21,10 @@ const Info = ({data, highlightedSkills}) => {
                 let className = "text";
                 let skillCategory = highlightedSkills.getSkillCategoryByTechSkill(skill);
                 if (skillCategory) {
-                  className += ` highlighted-${skillCategory.index}`;
+                  className += ` category-${skillCategory.index}`;
+                }
+                if (skillCategory.highlighted) {
+                  className += ' highlighted';
                 }
                 return <li key={i}><span className={className}>{skill}</span></li>
               }
@@ -102,8 +105,16 @@ const Achievement = ({data, highlightedSkills}) => {
 class App extends Component {
   constructor() {
     super();
+  }
 
-    const list = [];
+  componentWillMount() {
+    let list = this.props.data.skills;
+    list = list.map((skillCategory, index) => {
+      skillCategory.techSkills = new Set([...(skillCategory.majorSkills || []), ...(skillCategory.minorSkills || [])]);
+      skillCategory.index = index + 1;
+      skillCategory.highlighted = false;
+      return skillCategory;
+    });
     list.getSkillCategoryByTechSkill = function (skill) {
       let filtered = list.filter((el) => el.techSkills.has(skill) || el.name === skill);
       return filtered[0];
@@ -116,28 +127,16 @@ class App extends Component {
       return index;
     }
 
-    this.state = {
-      highlightedSkills: list
-    };
+    this.setState({
+      skills: list
+    });
   }
 
   _onSkillHighlightToggle = (skill) => {
     this.setState((state) => {
-      const index = state.highlightedSkills.indexOfSkill(skill);
+      const index = state.skills.indexOfSkill(skill);
       if (index > -1) {
-        state.highlightedSkills.splice(index, 1);
-      } else {
-        // find the skill category and the index at the some time
-        let objIndex;
-        const obj = this.props.data.skills.filter((el, i) => {
-          if (el.name === skill) {
-            objIndex = i + 1;
-            return true;
-          }
-        })[0];
-        obj.techSkills = new Set([...(obj.majorSkills || []), ...(obj.minorSkills || [])]);
-        obj.index = objIndex;
-        state.highlightedSkills.push(obj);
+        state.skills[index].highlighted = !state.skills[index].highlighted;
       }
       return state;
     })
@@ -151,7 +150,7 @@ class App extends Component {
         <main>
           <section className="experience">
             <h2>Experience</h2>
-            {this.props.data.experience.map((data, key) => <Experience data={data} key={key} highlightedSkills={this.state.highlightedSkills} />)}
+            {this.props.data.experience.map((data, key) => <Experience data={data} key={key} highlightedSkills={this.state.skills} />)}
           </section>
           <section className="skills">
             <h2>Skills</h2>
@@ -159,12 +158,12 @@ class App extends Component {
           </section>
           <section className="education">
             <h2>Education</h2>
-            {this.props.data.education.map((data, key) => <Education data={data} key={key} highlightedSkills={this.state.highlightedSkills} />)}
+            {this.props.data.education.map((data, key) => <Education data={data} key={key} highlightedSkills={this.state.skills} />)}
           </section>
           <section className="achievements">
             <h2>Projects</h2>
             <ul>
-              {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} highlightedSkills={this.state.highlightedSkills}/>)}
+              {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} highlightedSkills={this.state.skills}/>)}
             </ul>
           </section>
         </main>
