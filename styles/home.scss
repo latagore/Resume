@@ -366,7 +366,7 @@ $grid-segments: 10;
     z-index: 1;
     display: block;
     pointer-events: none;
-    
+
     @for $i from 1 through ($grid-segments + 1) {
       .gridline-#{$i} {
         $width: percentage(($i - 1) * $bar-width / $grid-segments);
@@ -391,7 +391,7 @@ $grid-segments: 10;
     }
 
     @for $i from 1 through 10 {
-      .bar:nth-child(#{$i - 1}) {
+      .bar:nth-child(#{$i}) {
         $bar-color: nth($secondary-colors, $i);
         $bar-hover-color: transparentize($bar-color, 0.5);
         background-color: $bar-color;
