@@ -10,12 +10,15 @@ $secondary-colors:
   #A583C5,
   #80A2C0,
   #8E8BC9,
-  #5189BC,
-  #8B54C1,
-  #655DC5,
-  #A583C5,
-  #80A2C0,
-  #8E8BC9;
+  // slightly change colors to make colors unique
+  // so we can find their index...
+  // pretty hacky :(
+  #5189BD,
+  #8B54C2,
+  #655DC6,
+  #A583C6,
+  #80A2C1,
+  #8E8BD0;
 
 @function getMediaQuery($size, $print) {
   @return "(min-width: #{$size})" + if($print, ", print", "");
