@@ -28,7 +28,7 @@ class SkillGraph extends Component {
           {
             this.props.skills.map(
               (skill, key) => (
-                <div key={key} className={`bar bar-${skill.strength * GRAPH_SEGMENTS}`} data-skill={skill.name} onClick={this._onSkillClick}>
+                <div key={key} className={`bar bar-${skill.strength * GRAPH_SEGMENTS} ${skill.highlighted && "active"}`} data-skill={skill.name} onClick={this._onSkillClick}>
                   <div className="bar-content">
                     <span>{skill.name}</span>
                     {skill.majorSkills && <br />}

@@ -166,7 +166,7 @@ class App extends Component {
           </section>
           <section className="skills">
             <h2>Skills</h2>
-            <SkillGraph skills={this.props.data.skills} onSkillHighlightToggle={this._onSkillHighlightToggle}/>
+            <SkillGraph skills={this.state.skills} onSkillHighlightToggle={this._onSkillHighlightToggle}/>
           </section>
           <section className="education">
             <h2>Education</h2>
