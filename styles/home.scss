@@ -434,15 +434,11 @@ $grid-segments: 10;
 
         background-color: $bar-color;
         transition: background-color 0.2s ease-out;
-        &:hover {
+        &:hover, &.active {
           background-color: $bar-hover-color;
         }
         &:active {
           background-color: $bar-active-color;
-          transition-duration: 0s;
-        }
-        &.active, &.active:hover {
-          background-color: $bar-hover-color;
           transition-duration: 0s;
         }
       }
