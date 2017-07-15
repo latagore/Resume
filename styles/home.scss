@@ -415,10 +415,15 @@ $grid-segments: 10;
       .bar:nth-child(#{$i}) {
         $bar-color: nth($secondary-colors, $i);
         $bar-hover-color: transparentize($bar-color, 0.5);
+        $bar-active-color: saturate(darken($bar-hover-color, 20%), 60%);
         background-color: $bar-color;
         transition: background-color 0.2s ease-out;
         &:hover {
           background-color: $bar-hover-color;
+        }
+        &:active {
+          background-color: $bar-active-color;
+          transition-duration: 0s;
         }
       }
     }
