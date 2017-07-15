@@ -136,7 +136,16 @@ class App extends Component {
     this.setState((state) => {
       const index = state.skills.indexOfSkill(skill);
       if (index > -1) {
-        state.skills[index].highlighted = !state.skills[index].highlighted;
+        // highlight only the current index
+        // remove highlight from the rest
+        state.skills.forEach((skill, i) => {
+          // index is 1-based. i is 0 based
+          if (state.skills[i].highlighted) {
+            state.skills[i].highlighted = false;
+          } else {
+            state.skills[i].highlighted = (i) === index;
+          }
+        });
       }
       return state;
     })
