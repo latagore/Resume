@@ -25,8 +25,11 @@ const Info = ({data, highlightedSkills}) => {
                 }
                 if (skillCategory.highlighted) {
                   className += ' highlighted';
+                  return <li key={i}><span className={className}><strong>{skill}</strong></span></li>
+                } else {
+                  return <li key={i}><span className={className}>{skill}</span></li>
                 }
-                return <li key={i}><span className={className}>{skill}</span></li>
+
               }
             )}
           </ul>

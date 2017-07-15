@@ -301,6 +301,12 @@ $highlight-color: lighten($primary-color, 30%);
       display: none;
     }
 
+    strong {
+      // use background to indicate emphasis
+      // strong will only be for semantic web
+      font-weight: normal;
+    }
+
     .text {
       position: relative;
       z-index: -1;
@@ -416,6 +422,7 @@ $grid-segments: 10;
         $bar-color: nth($secondary-colors, $i);
         $bar-hover-color: transparentize($bar-color, 0.5);
         $bar-active-color: saturate(darken($bar-hover-color, 20%), 60%);
+
         background-color: $bar-color;
         transition: background-color 0.2s ease-out;
         &:hover {
