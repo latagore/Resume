@@ -77,6 +77,7 @@ const Experience = ({data, highlightedSkills}) => {
 }
 
 const Education = ({data, highlightedSkills}) => {
+  if (data.hidden) return null;
   return (
     <div className="info-block">
       <h3 className="heading">{data.title} &mdash; {data.organization}</h3>
@@ -97,6 +98,7 @@ const Education = ({data, highlightedSkills}) => {
 }
 
 const Achievement = ({data, highlightedSkills}) => {
+  if (data.hidden) return null;
   return (
     <li>
       <h3>{data.title}</h3>
@@ -120,7 +122,7 @@ class App extends Component {
     });
     list.getSkillCategoryByTechSkill = function (skill) {
       let filtered = list.filter((el) => el.techSkills.has(skill) || el.name === skill);
-      return filtered[0];
+      return filtered[0] || {};
     }
     list.indexOfSkill = function (skill) {
       let index = -1;
@@ -173,7 +175,7 @@ class App extends Component {
             {this.props.data.education.map((data, key) => <Education data={data} key={key} highlightedSkills={this.state.skills} />)}
           </section>
           <section className="achievements">
-            <h2>Projects</h2>
+            <h2>Accomplishments</h2>
             <ul>
               {this.props.data.achievements.map((data, key) => <Achievement data={data} key={key} highlightedSkills={this.state.skills}/>)}
             </ul>
