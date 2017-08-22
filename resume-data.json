@@ -28,7 +28,6 @@
       ],
       "skills": ["Java", "Javascript"]
     }, {
-      "hidden": true,
       "organization": "Lighthouse Labs",
       "title": "Web Development Bootcamp (Immersive)",
       "startDate": "May 2017",
@@ -49,15 +48,15 @@
       "description": "Built a chatbot with three others that recommends cities to visit. Helped architect the bot, worked on NLP and supplemented skills in machine learning and ReactJS.",
       "skills": ["Node", "ReactJS", "ML/NLP", "git"]
     }, {
-      "title": "E-Commerce Website",
-      "description": "Built an online store from scratch in five days with three people. Led overall design of user flows and data. Created wireframes and Javascript functionality.",
+      "title": "E-Commerce Website Project",
+      "description": "Built an online store from scratch in five days with three people.",
       "skills": ["Node", "ES6", "Foundation", "HTML5", "git"]
     }, {
       "title": "3D Game Experiment",
-      "description": "Studied effectiveness of two types of mini-maps. Learned Unity and C<sup>♯</sup> to create game from scratch, even though coding not required."
+      "description": "Studied effectiveness of two types of mini-maps. Coding not required but learned Unity and C<sup>♯</sup> to create game from scratch anyways."
     }, {
       "title": "Personal Website",
-      "description": "Learned Foundation, Sass, Gulp, and Node for the first time. Website presents accomplishments using custom jQuery gallery and CSS3 animations.",
+      "description": "Learned Foundation, Sass, Gulp, and Node for the first time. Custom jQuery gallery and CSS3 animations.",
       "skills": ["Node", "Foundation", "Sass", "jQuery", "git"]
     }, {
       "title": "HTML/CSS Workshop Mentor",
