@@ -44,7 +44,7 @@
   ],
   "achievements": [
     {
-      "title": "Travel Agent Chat bot",
+      "title": "Travel Agent Chat Bot",
       "description": "Built a chat bot with three others that recommends cities to visit. Helped architect the bot, worked on NLP and supplemented skills in machine learning and ReactJS.",
       "skills": ["Node", "ReactJS", "ML/NLP", "git"]
     }, {
