@@ -44,23 +44,28 @@
   ],
   "achievements": [
     {
-      "title": "Travel Agent Chatbot",
-      "description": "Built a chatbot with three others that recommends cities to visit. Helped architect the bot, worked on NLP and supplemented skills in machine learning and ReactJS.",
+      "title": "Travel Agent Chat bot",
+      "description": "Built a chat bot with three others that recommends cities to visit. Helped architect the bot, worked on NLP and supplemented skills in machine learning and ReactJS.",
       "skills": ["Node", "ReactJS", "ML/NLP", "git"]
     }, {
       "title": "E-Commerce Website Project",
       "description": "Built an online store from scratch in five days with three people.",
       "skills": ["Node", "ES6", "Foundation", "HTML5", "git"]
     }, {
-      "title": "3D Game Experiment",
+      "title": "3D VR Game Experiment",
       "description": "Studied effectiveness of two types of mini-maps. Coding not required but learned Unity and C<sup>♯</sup> to create game from scratch anyways."
     }, {
+      "hidden": true,
       "title": "Personal Website",
       "description": "Learned Foundation, Sass, Gulp, and Node for the first time. Custom jQuery gallery and CSS3 animations.",
       "skills": ["Node", "Foundation", "Sass", "jQuery", "git"]
     }, {
       "title": "HTML/CSS Workshop Mentor",
       "description": "Presented HTML/CSS concepts. Proactively approached students to check progress."
+    }, {
+      "title": "Programming Contests",
+      "description": "Top newbie at York University programming contests for two years. Ranked 50,000th world-wide on HackerRank.",
+      "link": "https://wiki.eecs.yorku.ca/project/ACM/2010"
     }
   ],
   "skills": [
