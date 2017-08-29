@@ -54,6 +54,7 @@ const Aside = ({data, onSkillHighlight}) => {
         <div className="linkedin"><a href={`https://www.linkedin.com/in/${c.linkedin}`}>{c.linkedin}</a></div>
       </div>
       <p className="summary" dangerouslySetInnerHTML={{__html: data.summary}} />
+      <p class="built-with">Built with <i class="fa fa-heart" aria-label="love"></i> in ReactJS.</p>
     </aside>
   )
 }
