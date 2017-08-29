@@ -145,6 +145,10 @@ header {
 footer {
   text-align: right;
   font-size: 90%;
+  p {
+    /* Try to fit in text on printed pages by removing margin */
+    margin-bottom: 0;
+  }
   .built-with .fa-heart-o {
     color: red;
   }
