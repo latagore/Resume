@@ -109,7 +109,7 @@ const Achievement = ({data, highlightedSkills}) => {
 
 const Footer = () => (
   <footer>
-    <p className="built-with">Built with <i className="fa fa-heart-o" aria-label="love"></i> in <a href="https://facebook.github.io/react/">ReactJS</a>.</p>
+    <p className="built-with">Built with <i className="fa fa-heart-o" aria-label="love"></i> in <a href="https://facebook.github.io/react/">React</a>.</p>
   </footer>
 )
 
