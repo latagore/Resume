@@ -23,7 +23,7 @@
         "overall": 6.54,
         "major": 6.48,
         "max": 9
-      }, "info": [
+      }, "hidden.info": [
         "Courses: Web Development, User Interface Design, Algorithms, Concurrency"
       ],
       "skills": ["Java", "Javascript"]
