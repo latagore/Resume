@@ -54,7 +54,6 @@ const Aside = ({data, onSkillHighlight}) => {
         <div className="linkedin"><a href={`https://www.linkedin.com/in/${c.linkedin}`}>{c.linkedin}</a></div>
       </div>
       <p className="summary" dangerouslySetInnerHTML={{__html: data.summary}} />
-      <p class="built-with">Built with <i class="fa fa-heart" aria-label="love"></i> in ReactJS.</p>
     </aside>
   )
 }
@@ -107,6 +106,12 @@ const Achievement = ({data, highlightedSkills}) => {
     </li>
   )
 }
+
+const Footer = () => (
+  <footer>
+    <p className="built-with">Built with <i className="fa fa-heart-o" aria-label="love"></i> in <a href="https://facebook.github.io/react/">ReactJS</a>.</p>
+  </footer>
+)
 
 class App extends Component {
   constructor() {
@@ -182,6 +187,7 @@ class App extends Component {
             </ul>
           </section>
         </main>
+        <Footer />
       </div>
     );
   }
