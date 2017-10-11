@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SkillGraph from './components/SkillGraph.jsx'
+import SkillGraph from './Components/SkillGraph.jsx'
 const Header = ({data}) => {
   return (
     <header>

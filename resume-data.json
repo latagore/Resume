@@ -1,4 +1,3 @@
-
 {
   "contact": {
     "name": "Steven Xu",
@@ -104,6 +103,19 @@
     }
   ],
   "experience": [
+    {
+      "title": "Software Developer (Contract)",
+      "organization": "Nexxt Intelligence",
+      "location": "Toronto, Ontario",
+      "startDate": "September 2017",
+      "endDate": "Current",
+      "info": [
+        {
+          "description": "Led innovation for developing chat bot features and built from the ground up using Microsoft Bot Framework. Planned sample user flows and potential features to improve engagement.",
+          "skills": ["Node.js", "React.js"]
+        }
+      ]
+    },
     {
       "title": "Software Developer",
       "organization": "Transmission Media",
