@@ -9,7 +9,7 @@
     "website": "stevenxu.xyz",
     "linkedin": "stevenxu2"
   },
-  "summary": "Web developer who is a go-to expert for git, ES6, accessibility and Slack. Looking for work in full-stack web developer roles, and wants to move into data analytics in the future. Likes to poke fun at friends by <a href='https://latagore.github.io/wheel-of-fortune/'>coding up their startup ideas.</a>",
+  "summary": "Web developer who is a go-to expert for git, Node.js, accessibility and creative innovation. Looking for work in full-stack web developer roles, working my way into data analytics roles. Likes to poke fun at friends by <a href='https://latagore.github.io/wheel-of-fortune/'>coding up their startup ideas.</a>",
   "importantSkills": ["Node", "PostgreSQL", "Bootstrap", "Foundation"],
   "education": [
     {
@@ -60,8 +60,8 @@
       "description": "Learned Foundation, Sass, Gulp, and Node for the first time. Custom jQuery gallery and CSS3 animations.",
       "skills": ["Node", "Foundation", "Sass", "jQuery", "git"]
     }, {
-      "title": "HTML/CSS Workshop Mentor",
-      "description": "Presented HTML/CSS concepts. Proactively approached students to check progress."
+      "title": "Mentor for HTML/CSS and SQL Workshops",
+      "description": "Presented core concepts on HTML and CSS. Proactively approached students to check progress."
     }, {
       "title": "Programming Contests",
       "description": "Top newbie at York University programming contests for two years. Ranked 50,000th world-wide on HackerRank.",
@@ -104,15 +104,15 @@
   ],
   "experience": [
     {
-      "title": "Software Developer (Contract)",
+      "title": "Software Developer",
       "organization": "Nexxt Intelligence",
       "location": "Toronto, Ontario",
       "startDate": "September 2017",
       "endDate": "Current",
       "info": [
         {
-          "description": "Led innovation for developing chat bot features and built from the ground up using Microsoft Bot Framework. Planned sample user flows and potential features to improve engagement.",
-          "skills": ["Node.js", "React.js"]
+          "description": "Built a chat bot by developing innovative chat bot features and built custom chat framework. Planned sample user flows and designed more engaging experiences.",
+          "skills": ["Node.js", "React.js", "SQL", "Redis"]
         }
       ]
     },
@@ -138,7 +138,7 @@
       "endDate": "April 2016",
       "info": [
         {
-          "description": "Independently ported customizations to Netdisco's new version and added new features on the full stack.",
+          "description": "Ported customizations to Netdisco's new version and added new features on the full stack.",
           "skills": ["PostgreSQL", "Perl", "Bootstrap", "git", "Unix"]
         },
         "Gathered feature requirements and ensured satisfaction by proactively meeting with users. Two out of six survey respondents indicated the software met their needs extremely well and four indicated very well."
@@ -151,11 +151,10 @@
       "endDate": "August 2014",
       "info": [
         {
-          "description": "Collaborated with developers and testers to test REST services. Helped in the design of test framework with JUnit 4 and guice expertise.",
+          "description": "Created automated REST tests. Helped in the design of test framework with technical expertise. Created test plan using formal software testing techniques.",
           "skills": ["Java", "Unix", "Software Testing", "Virtual Machines"]
         },
-        "Created test plan for command line utility using formal software testing techniques.",
-        "Performed accessibility testing and discovered fifty accessibility-related defects, including some that were not found during testing of the previous release. Presented tutorial on screen-reader technology to fifty team members, due to recognized expertise."
+        "Led accessibility testing and discovered fifty accessibility-related defects. Presented tutorial on screen-reader technology to fifty team members."
       ]
     }
   ]
